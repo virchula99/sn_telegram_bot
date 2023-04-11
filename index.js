@@ -1,5 +1,5 @@
 const modules = require('./modules');
-const mySecret = process.env['BOT_TOKEN'];
+const token = process.env['BOT_TOKEN'];
 const CONSTANTS = modules.CONSTANTS;
 const axios = modules.axios;
 const util = modules.util;
@@ -18,8 +18,7 @@ app.listen(port, () => {
 })
 
 
-
-const sn_telegram_bot = new TelegramAPI(mySecret, { polling: true });
+const sn_telegram_bot = new TelegramAPI(token, { polling: true });
 sn_telegram_bot.on('message', user_message => {
   if (user_message.text === '/create_incident') {
     create_incident(user_message);
