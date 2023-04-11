@@ -14,12 +14,12 @@ sn_telegram_bot.on('message', user_message=>{
     }
 })
 
-const start = async (user_message)=>{
+const start = (user_message)=>{
     const message = util.format(CONSTANTS.BOT_DESCRIPTION, user_message.from.first_name);
-    await sn_telegram_bot.sendMessage(user_message.chat.id, message);
+    sn_telegram_bot.sendMessage(user_message.chat.id, message);
 }
 const create_incident = async (user_message)=>{
-    await sn_telegram_bot.sendMessage(user_message.chat.id, CONSTANTS.WRITE_SHORT_DESC_TEXT);
+    sn_telegram_bot.sendMessage(user_message.chat.id, CONSTANTS.WRITE_SHORT_DESC_TEXT);
     sn_telegram_bot.on('message', async repliedMessage=>{
         if(CONSTANTS.REGEXP_CHECK_FOR_ENGLISH.test(repliedMessage.text)){
             CONSTANTS.CREATE_INCIDENT_HTTP_DETAILS.headers.Message = util.format(CONSTANTS.CREATE_INCIDENT_HTTP_DETAILS.headers.Message, repliedMessage.text);
