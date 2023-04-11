@@ -4,7 +4,7 @@
   "description": "This bot helps you to integrate with ServiceNow instance",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "author": "Anton Virchenko",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "http": "^0.0.1-security",
     "node": "^19.8.1",
     "node-telegram-bot-api": "^0.61.0",
+    "nodemon": "^2.0.22",
     "util": "^0.12.5"
   }
 }
