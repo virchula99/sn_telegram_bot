@@ -3,5 +3,6 @@ module.exports = {
     util: require('util'),
     telegam_api: require('node-telegram-bot-api'),
     dotenv: require('dotenv').config(),
+    express : require('express'),
     CONSTANTS: require('./CONSTANTS').getConstants
 }
